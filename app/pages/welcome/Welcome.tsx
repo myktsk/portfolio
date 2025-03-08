@@ -1,10 +1,8 @@
-import { Header } from "~/component/Header/Header";
 import { Works } from "./Works/Works";
 import { useRef } from "react";
 import { useIsVisible } from "~/utils/useIsVisible";
 import { Skills } from "../../component/Skills/Skills";
 import { Tools } from "./Tools/Tools";
-import { Footer } from "~/component/Footer/Footer";
 
 export const Welcome = () => {
   const heroRef = useRef<HTMLDivElement | null>(null);
@@ -20,8 +18,7 @@ export const Welcome = () => {
   const isToolsVisible = useIsVisible(toolsRef);
 
   return (
-    <div className="bg-gray-100">
-      <Header />
+    <main className="bg-gray-100">
       <div
         ref={heroRef}
         className="bg-gray-300 rounded-b-[100px] relative text-white p-10 before:absolute before:inset-0 before:bg-[url('/assets/noise-light.png')]"
@@ -71,7 +68,6 @@ export const Welcome = () => {
       <section ref={skillsRef} className="bg-gray-100 rounded-b-[100px]">
         <Skills visible={isSkillsVisible} />
       </section>
-      <Footer />
-    </div>
+    </main>
   );
 };

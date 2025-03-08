@@ -1,6 +1,4 @@
 import { useRef } from "react";
-import { Footer } from "~/component/Footer/Footer";
-import { Header } from "~/component/Header/Header";
 import { Skills } from "~/component/Skills/Skills";
 import { useIsVisible } from "~/utils/useIsVisible";
 import { Inspirations } from "./Inspirations/Inspirations";
@@ -19,8 +17,7 @@ export const About = () => {
   const isInspirationsVisible = useIsVisible(inspirationsRef);
 
   return (
-    <div className="bg-gray-100">
-      <Header />
+    <main className="bg-gray-100">
       <div
         ref={heroRef}
         className="bg-gray-300 rounded-b-[100px] relative overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14 before:absolute before:inset-0 before:bg-[url('/assets/noise-light.png')]"
@@ -91,7 +88,6 @@ export const About = () => {
       <section ref={inspirationsRef} className="bg-gray-100 rounded-b-[100px]">
         <Inspirations visible={isInspirationsVisible} />
       </section>
-      <Footer />
-    </div>
+    </main>
   );
 };
