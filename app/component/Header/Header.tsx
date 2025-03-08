@@ -1,6 +1,7 @@
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
+import { NavLink } from "react-router";
 
 const NAVIGATION_MAIN = [
   { name: "Works", href: "/works" },
@@ -22,17 +23,21 @@ export const Header = () => {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex">
-          <a href="/" className="text-sm/6 text-gray-900 px-4">
+          <NavLink to="/" className="text-sm/6 text-gray-900 px-4">
             Miyuki Tuisku
-          </a>
+          </NavLink>
           {NAVIGATION_MAIN.map((item, i) => (
-            <div key={item.name}>
-              <a
-                href={item.href}
-                className="font-light text-sm/6 text-gray-900 px-2"
+            <div key={item.name} className="lg:block hidden">
+              <NavLink
+                to={item.href}
+                className={({ isActive }) =>
+                  `font-light text-sm/6 text-gray-900 px-2 ${
+                    isActive ? "font-semibold" : ""
+                  }`
+                }
               >
                 {item.name}
-              </a>
+              </NavLink>
             </div>
           ))}
         </div>
@@ -81,11 +86,21 @@ export const Header = () => {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
+                {NAVIGATION_MAIN.map((item, i) => (
+                  <div key={item.name}>
+                    <NavLink
+                      to={item.href}
+                      className="font-light text-sm/6 text-gray-900 px-2"
+                    >
+                      {item.name}
+                    </NavLink>
+                  </div>
+                ))}
                 {NAVIGATION_SUB.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-gray-900 hover:bg-gray-50"
+                    className="font-light text-sm/6 text-gray-900 px-2"
                   >
                     {item.name}
                   </a>

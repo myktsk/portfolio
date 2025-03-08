@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import { WORKS } from "~/models/works/works.const";
 
 type Props = {
@@ -118,14 +119,14 @@ export const Works = ({ visible }: Props) => {
           <div className="relative lg:col-span-2">
             <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]" />
             <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] max-lg:rounded-b-[calc(2rem+1px)] lg:rounded-br-[calc(2rem+1px)]">
-              <a
-                href="/works"
+              <NavLink
+                to="/works"
                 className="h-full flex items-center justify-center"
               >
                 <p className="text-sm/4 font-semibold text-blue-600 py-4">
                   View More
                 </p>
-              </a>
+              </NavLink>
             </div>
             <div className="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]" />
           </div>
