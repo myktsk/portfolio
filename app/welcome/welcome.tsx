@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useIsVisible } from "~/utils/useIsVisible";
 import { Skills } from "./Skills/Skills";
 import { Tools } from "./Tools/Tools";
+import { Footer } from "~/component/Footer/Footer";
 
 export const Welcome = () => {
   const heroRef = useRef<HTMLDivElement | null>(null);
@@ -70,6 +71,7 @@ export const Welcome = () => {
       <section ref={skillsRef} className="bg-gray-100 rounded-b-[100px]">
         <Skills visible={isSkillsVisible} />
       </section>
+      <Footer />
     </div>
   );
 };
