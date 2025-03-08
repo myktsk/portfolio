@@ -35,7 +35,7 @@ export const Works = () => {
         >
           {WORKS.map((work) => (
             <li key={work.title}>
-              <NavLink to={`work/${work.id}`}>
+              <NavLink to={`/work/${work.id}`}>
                 <img
                   alt=""
                   src={work.image}
