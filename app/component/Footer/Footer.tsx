@@ -19,7 +19,7 @@ export const Footer = () => {
           <h2
             className={`text-3xl sm:text-5xl font-bold bg-gradient-to-r from-black to-gray-500 bg-clip-text text-transparent`}
           >
-            Looking for a developer to bring your ideas to life?
+            Looking for a developer?
           </h2>
           <p className="inline-block mt-10 rounded-full bg-gray-900 px-10 py-4 text-sm text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-gray-600">
             <a href="mailto:tuiskumiyuki@gmail.com">Let's talk</a>

@@ -1,10 +1,14 @@
 import type { Route } from "./+types/home";
-import { Welcome } from "../welcome/welcome";
+import { Welcome } from "../pages/welcome/Welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Miyuki Tuisku Portfolio" },
+    {
+      name: "description",
+      content:
+        "I build fast, user-friendly web experiences with clean code. Explore my work in frontend and backend development, UX design, AI solutions, and more.",
+    },
   ];
 }
 

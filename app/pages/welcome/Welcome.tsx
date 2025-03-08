@@ -2,7 +2,7 @@ import { Header } from "~/component/Header/Header";
 import { Works } from "./Works/Works";
 import { useRef } from "react";
 import { useIsVisible } from "~/utils/useIsVisible";
-import { Skills } from "./Skills/Skills";
+import { Skills } from "../../component/Skills/Skills";
 import { Tools } from "./Tools/Tools";
 import { Footer } from "~/component/Footer/Footer";
 

@@ -2,7 +2,11 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid";
 import { useState } from "react";
 
-const NAVIGATION = [
+const NAVIGATION_MAIN = [
+  { name: "Works", href: "/works" },
+  { name: "About", href: "/about" },
+];
+const NAVIGATION_SUB = [
   { name: "LinkedIn", href: "https://www.linkedin.com/in/miyukituisku/" },
   { name: "GitHub", href: "https://github.com/myktsk" },
   { name: "Email", href: "mailto:tuiskumiyuki@gmail.com" },
@@ -15,8 +19,23 @@ export const Header = () => {
     <header className="fixed inset-x-0 top-0 z-20">
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-end p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
+        <div className="flex">
+          <a href="/" className="text-sm/6 text-gray-900 px-4">
+            Miyuki Tuisku
+          </a>
+          {NAVIGATION_MAIN.map((item, i) => (
+            <div key={item.name}>
+              <a
+                href={item.href}
+                className="font-light text-sm/6 text-gray-900 px-2"
+              >
+                {item.name}
+              </a>
+            </div>
+          ))}
+        </div>
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -28,7 +47,7 @@ export const Header = () => {
           </button>
         </div>
         <div className="hidden lg:flex">
-          {NAVIGATION.map((item, i) => (
+          {NAVIGATION_SUB.map((item, i) => (
             <div key={item.name}>
               {i > 0 && <span className="text-gray-500 mx-2">/</span>}
               <a
@@ -62,7 +81,7 @@ export const Header = () => {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                {NAVIGATION.map((item) => (
+                {NAVIGATION_SUB.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
