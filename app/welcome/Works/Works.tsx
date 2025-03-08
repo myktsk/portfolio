@@ -122,7 +122,7 @@ export const Works = ({ visible }: Props) => {
                 href="/works"
                 className="h-full flex items-center justify-center"
               >
-                <p className="text-sm/4 font-semibold text-blue-600">
+                <p className="text-sm/4 font-semibold text-blue-600 py-4">
                   View More
                 </p>
               </a>

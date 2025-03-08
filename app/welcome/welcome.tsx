@@ -3,6 +3,7 @@ import { Works } from "./Works/Works";
 import { useRef } from "react";
 import { useIsVisible } from "~/utils/useIsVisible";
 import { Skills } from "./Skills/Skills";
+import { Tools } from "./Tools/Tools";
 
 export const Welcome = () => {
   const heroRef = useRef<HTMLDivElement | null>(null);
@@ -13,6 +14,9 @@ export const Welcome = () => {
 
   const skillsRef = useRef<HTMLElement | null>(null);
   const isSkillsVisible = useIsVisible(skillsRef);
+
+  const toolsRef = useRef<HTMLElement | null>(null);
+  const isToolsVisible = useIsVisible(toolsRef);
 
   return (
     <div className="bg-gray-100">
@@ -57,7 +61,13 @@ export const Welcome = () => {
       >
         <Works visible={isWorksVisible} />
       </section>
-      <section ref={skillsRef} className="bg-gray-200 rounded-b-[100px]">
+      <section
+        ref={toolsRef}
+        className="bg-gray-300 rounded-b-[100px] relative before:absolute before:inset-0 before:bg-[url('/assets/noise-light.png')]"
+      >
+        <Tools visible={isToolsVisible} />
+      </section>
+      <section ref={skillsRef} className="bg-gray-100 rounded-b-[100px]">
         <Skills visible={isSkillsVisible} />
       </section>
     </div>
